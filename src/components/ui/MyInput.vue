@@ -3,6 +3,7 @@
         class='input' 
         type="text"
         @input="updateInput"
+        :value="modelValue"
     >
 </template>
 
@@ -10,7 +11,7 @@
 export default {
     name: "MyInput",
     props: {
-        modelValue: [String, Number]
+        modelValue: [String, Number],
     },
     methods: {
         updateInput(e) {

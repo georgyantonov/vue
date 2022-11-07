@@ -2,7 +2,7 @@
     <form @submit.prevent>
         <h2>Создание поста</h2>
         <MyInput 
-            v-model="post.title" 
+            v-model="post.title"
             type="text" 
             placeholder="Название"
         />
@@ -30,10 +30,14 @@ export default {
             }
         };
     },
-    props: {},
+    props: {
+        posts:{
+            type: Array
+        }
+    },
     methods: {
         createPost() {
-            this.post.id = Date.now();
+            this.post.id = this.posts[this.posts.length - 1].id + 1;
             this.$emit("create", this.post);
             this.post = {
                 title: "",

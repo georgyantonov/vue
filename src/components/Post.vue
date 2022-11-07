@@ -9,6 +9,7 @@
         <div class="post__btns">
             <MyButton
                 class="delete__btn"
+                @click="$emit('remove', post)"
             >
                 Удалить
             </MyButton>
